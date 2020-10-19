@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/weatherstyle.css">
+
+    <script defer src="js/main.js"></script>
+    {{>links}}
+
+</head>
+
+<body>
+    {{!-- navbar --}}
+    {{>navbar}}
+
+    {{!-- main body --}}
+    <div class="search_box">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" id="cityname" placeholder="Enter city name"
+                aria-label="Search" autocomplete="off">
+            <button class="btn btn-info my-2 my-sm-0" t="submit" id="submitbtn">Search</button>
+        </form>
+    </div>
+    <div class="data_box">
+        <div class="top_layer">
+            <p id="today_day">Tuesday</p>
+            <p id="today_date">13 Oct</p>
+        </div>
+        <div class="main_layer">
+            <p id="error_mesg" class="text-info">Your output will be display here</p>
+            <div class="middle_layer data_hide">
+                <h2 id="temp"><span id="temp_val">24</span><sup>0</sup> C</h2>
+                <h3 id="city_name">City name</h3>
+                <p id="temp_mood"><i class="fas fa-sun"></i></p>
+                <h4 id="temp_status">Mood</h4>
+            </div>
+        </div>
+    </div>
+
+    {{!-- footer --}}
+    {{>footer}}
+</body>
+
+</html>

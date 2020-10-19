@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: 'Audiowide', cursive;
+    color:snow;
+}
+html{
+    /* 1rem ->10px; */
+    font-size: 62.5;
+}
+body{
+    height: 100vh;
+    /* width: 100vw; */
+    display: flex;
+    flex-direction: column;
+
+    /* to center the div using flexbox */
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #D9AFD9; */
+    background-image: url("../images/1.jpg");
+    background-repeat: no-repeat;
+}
+
+/* main container */
+.search_box{
+    margin-top: auto;
+}
+
+.data_box{
+    margin-top: auto;
+    width: 28rem;
+    height: 30rem;
+    /* color: cadetblue; */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* top layer of databox */
+.top_layer{
+    margin-top: 1rem;
+}
+.top_layer p{
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* main layer */
+.main_layer{
+    margin-top: 1rem;
+}
+.main_layer p:first-child{
+    /* color: red; */
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* middle layer */
+.middle_layer{
+    margin-top: 1rem;
+}
+.middle_layer h2,sup,span{
+    font-size: 5rem;
+    font-weight: bolder;
+    color: yellow;
+}
+
+/* footer */
+.middle_layer p{
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* data hide */
+.data_hide{
+    visibility: hidden;
+    /* transition: all 0.3s linear; */
+}
