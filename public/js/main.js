@@ -8,6 +8,9 @@ const city_name=document.getElementById("city_name");
 const temp_mood=document.getElementById("temp_mood");
 const temp_status = document.getElementById("temp_status");
 
+let today_day =  document.getElementById("today_day");
+let today_date= document.getElementById("today_date");
+
 const data_hide = document.querySelector(".middle_layer");
 
 const getWeatherinfo=async()=>{
@@ -31,12 +34,12 @@ const getWeatherinfo=async()=>{
             temp_status.innerText = arrData[0].weather[0].main;
 
             let tempData= arrData[0].weather[0].main;
-            if(tempData == "clear"){
+            if(tempData == "Clear"){
                 temp_mood.innerHTML = "<i class='fas fa-sun' style='color:#eccc68'></i>";
-            }else if(tempData == "clouds"){
-                temp_mood.innerHTML = "<i class='fas fa-cloud' style='color:#eccc68'></i>"
-            }else if(tempData == "rains"){
-                temp_mood.innerHTML = "<i class='fas fa-rain` style='color:#eccc68'></i>"
+            }else if(tempData == "Clouds"){
+                temp_mood.innerHTML = "<i class='fas fa-cloud' style='color:lightblue'></i>"
+            }else if(tempData == "Rains"){
+                temp_mood.innerHTML = "<i class='fas fa-rain` style='color:blue'></i>"
             }else{
                 temp_mood.innerHTML = "<i class='fas fa-sun' style='color:#eccc68'></i>"
             }
@@ -50,5 +53,35 @@ const getWeatherinfo=async()=>{
         }
     }
 }
+
+let currentDate = new Date()
+const getCurrentDay = () => {
+    // 0,1,2,3,4,5,6 
+    // s,m,t,w,t,f,s
+    var weekdays = new Array(7);
+    weekdays[0] = "Sunday";
+    weekdays[1] = "Monday";
+    weekdays[2] = "Tueday";
+    weekdays[3] = "Wednesday";
+    weekdays[4] = "Thursday";
+    weekdays[5] = "Friday";
+    weekdays[6] = "Satday";
+
+    let Days = weekdays[currentDate.getDay()];
+    // console.log(Days);
+    return Days;
+}
+getCurrentDate = () => {
+    var monthsVal = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+    let Months = monthsVal[currentDate.getMonth()];
+    let Dates = currentDate.getDate();
+
+    // console.log(Dates,Months);
+    return `${Dates} ${Months}`;
+}
+
+today_day.innerText = getCurrentDay();
+today_date.innerText = getCurrentDate();
+
 
 submitbtn.addEventListener("click",getWeatherinfo)
